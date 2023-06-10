@@ -1,0 +1,898 @@
+﻿<Window x:Class="Telegram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telegram"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <Grid>
+        
+        <!--#region Columns-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!--#endregion-->
+        
+        <!--#region Chats-->
+        <DockPanel 
+            LastChildFill="True"
+            Grid.Column="0"
+            >
+            
+            <!--#region Menu and Search-->
+            <Grid
+                DockPanel.Dock="Top"
+                Height="50"
+                Background="DarkGray">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--#region Button of Menu-->
+                <Button
+                    Grid.Column="0"
+                    Height="30"
+                    Width="30"
+                    Margin="10"
+                    >
+
+                    <Image Source="/icons/menu.png" 
+                           Stretch="Fill"/>
+
+
+                </Button>
+                <!--#endregion-->
+                
+                <!--#region Textbox of Search-->
+                <TextBox 
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    Margin="10"
+                    Background="White"
+                    >
+                    Search
+
+                </TextBox>
+                <!--#endregion-->
+                
+            </Grid>
+            <!--#endregion-->
+            
+            <!--#region AllChats-->
+            <ScrollViewer
+                VerticalScrollBarVisibility="Auto"
+                >
+
+                <StackPanel 
+                    Background="#FF777777"
+                    >
+
+                    <!--#region Chat-->
+                    <Grid>
+
+                        <!--#region Columns-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <!--#region Circle of FullName-->
+                        <Grid Grid.Column="0">
+
+                            <Border 
+                                CornerRadius="50"
+                                Width="60"
+                                Height="60"
+                                Margin="0,10"
+                                Padding="0,10,0,0"
+                                Background="red"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="28"
+                                    >
+                                    ES
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+                        <!--#endregion-->
+
+                        <Grid Grid.Column="1">
+
+                            <!--#region Rows and Columns-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <!--#region Fullname-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Eva Summer
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Message-->
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontSize="12"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Reminders me of ...
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Clock-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="10"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                >
+                                11:00
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Count of messages-->
+                            <Border 
+                                Grid.Row="1"
+                                Grid.Column="1"    
+                                CornerRadius="50"
+                                Width="20"
+                                Height="20"
+                                Margin="0,10"
+                                Padding="0,3,0,0"
+                                Background="Blue"
+                                VerticalAlignment="Top"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="10"
+                                    >
+                                    2
+                                </TextBlock>
+                            </Border>
+                            <!--#endregion-->
+
+                        </Grid>
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Chat-->
+                    <Grid>
+
+                        <!--#region Columns-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <!--#region Circle of FullName-->
+                        <Grid Grid.Column="0">
+
+                            <Border 
+                                CornerRadius="50"
+                                Width="60"
+                                Height="60"
+                                Margin="0,10"
+                                Padding="0,10,0,0"
+                                Background="Blue"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="28"
+                                    >
+                                    AS
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+                        <!--#endregion-->
+
+                        <Grid Grid.Column="1">
+
+                            <!--#region Rows and Columns-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <!--#region Fullname-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Alexandra Smith
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Message-->
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontSize="12"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                This is amazing!
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Clock-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="10"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                >
+                                10:00
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Count of messages-->
+                            <Border 
+                                Grid.Row="1"
+                                Grid.Column="1"    
+                                CornerRadius="50"
+                                Width="20"
+                                Height="20"
+                                Margin="0,10"
+                                Padding="0,3,0,0"
+                                Background="Blue"
+                                VerticalAlignment="Top"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="10"
+                                    >
+                                    3
+                                </TextBlock>
+                            </Border>
+                            <!--#endregion-->
+
+
+                        </Grid>
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Chat-->
+                    <Grid>
+
+                        <!--#region Columns-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <!--#region Circle of FullName-->
+                        <Grid Grid.Column="0">
+
+                            <Border 
+                                CornerRadius="50"
+                                Width="60"
+                                Height="60"
+                                Margin="0,10"
+                                Padding="0,10,0,0"
+                                Background="Green"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="28"
+                                    >
+                                    MA
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+                        <!--#endregion-->
+
+                        <Grid Grid.Column="1">
+
+                            <!--#region Rows and Columns-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <!--#region Fullname-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Mike Apple
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Message-->
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontSize="12"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Thanks
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Clock-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="10"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                >
+                                9:00
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Count of messages-->
+                            <Border 
+                                Grid.Row="1"
+                                Grid.Column="1"    
+                                CornerRadius="50"
+                                Width="20"
+                                Height="20"
+                                Margin="0,10"
+                                Padding="0,3,0,0"
+                                Background="Blue"
+                                VerticalAlignment="Top"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="10"
+                                    >
+                                    1
+                                </TextBlock>
+                            </Border>
+                            <!--#endregion-->
+
+
+                        </Grid>
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Chat-->
+                    <Grid>
+
+                        <!--#region Columns-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <!--#region Circle of FullName-->
+                        <Grid Grid.Column="0">
+
+                            <Border 
+                                CornerRadius="50"
+                                Width="60"
+                                Height="60"
+                                Margin="0,10"
+                                Padding="0,10,0,0"
+                                Background="Aqua"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="28"
+                                    >
+                                    OP
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+                        <!--#endregion-->
+
+                        <Grid Grid.Column="1">
+
+                            <!--#region Rows and Columns-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <!--#region Fullname-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Old Pirates
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Message-->
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontSize="12"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Max: Yo-yo-yo
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Clock-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="10"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                >
+                                7:00
+                            </Label>
+                            <!--#endregion-->
+
+
+                        </Grid>
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Chat-->
+                    <Grid>
+
+                        <!--#region Columns-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <!--#region Circle of FullName-->
+                        <Grid Grid.Column="0">
+
+                            <Border 
+                                CornerRadius="50"
+                                Width="60"
+                                Height="60"
+                                Margin="0,10"
+                                Padding="0,10,0,0"
+                                Background="DarkBlue"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="28"
+                                    >
+                                    MB
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+                        <!--#endregion-->
+
+                        <Grid Grid.Column="1">
+
+                            <!--#region Rows and Columns-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <!--#region Fullname-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Max Bright
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Message-->
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontSize="12"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                How about some coffee?
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Clock-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="10"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                >
+                                6:00
+                            </Label>
+                            <!--#endregion-->
+
+
+                        </Grid>
+
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region Chat-->
+                    <Grid>
+
+                        <!--#region Columns-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--#endregion-->
+
+                        <!--#region Circle of FullName-->
+                        <Grid Grid.Column="0">
+
+                            <Border 
+                                CornerRadius="50"
+                                Width="60"
+                                Height="60"
+                                Margin="0,10"
+                                Padding="0,10,0,0"
+                                Background="Yellow"
+                                    >
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    Foreground="White"
+                                    FontSize="28"
+                                    >
+                                    NP
+                                </TextBlock>
+                            </Border>
+
+                        </Grid>
+                        <!--#endregion-->
+
+                        <Grid Grid.Column="1">
+
+                            <!--#region Rows and Columns-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <!--#endregion-->
+
+                            <!--#region Fullname-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="16"
+                                FontWeight="Bold"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                Natalia Parker
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Message-->
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontSize="12"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Left"
+                                >
+                                OK, great)
+                            </Label>
+                            <!--#endregion-->
+
+                            <!--#region Clock-->
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="10"
+                                Foreground="White"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                >
+                                4:00
+                            </Label>
+                            <!--#endregion-->
+
+                        </Grid>
+
+                    </Grid>
+                    <!--#endregion-->
+
+                </StackPanel>
+            </ScrollViewer>
+        <!--#endregion-->
+            
+            
+        </DockPanel>
+        <!--#endregion-->
+        
+        <!--#region Message-->
+        <DockPanel
+            LastChildFill="True"
+            Grid.Column="1" Background="#FF8E8E8E">
+
+            
+                
+            <!--#region Person's fullname-->
+            <Grid
+                DockPanel.Dock="Top"
+                Height="50" Background="#FFD8D8D8" 
+                >
+
+                <!--#region Columns-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--#endregion-->
+
+                <!--#region Fullname and Online-->
+                <Grid
+                    Grid.Column="0"
+                    >
+                    
+                    <!--#region Rows-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <!--#endregion-->
+
+                    <!--#region Fullname-->
+                    <Label
+                        Grid.Row="0"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Left"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        >
+                        Eva Summer
+                    </Label>
+                    <!--#endregion-->
+                    
+                    <!--#region Online-->
+                    <Label
+                        Grid.Row="1"
+                        VerticalContentAlignment="Center"
+                        HorizontalContentAlignment="Left"
+                        FontSize="10"
+                        >
+                        online
+                    </Label>
+                    <!--#endregion-->
+                    
+                    
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region Search button-->
+                <Button Grid.Column="1">
+
+                    <Image 
+                        Source="/icons/search.png"
+                        Height="30"
+                        Width="30">
+                    </Image>
+
+                </Button>
+                <!--#endregion-->
+                
+                <!--#region Menu button-->
+                <Grid 
+                    Grid.Column="2"
+                    >
+
+                    <Button>
+
+                        <Image 
+                            Source="/icons/dots.png"
+                            Height="30"
+                            Width="30">
+                        </Image>
+
+                    </Button>
+
+                </Grid>
+                <!--#endregion-->
+
+            </Grid>
+            <!--#endregion-->
+                
+                
+            <!--#region Write message-->
+            <Grid
+                DockPanel.Dock="Bottom"
+                Height="50"
+                Background="#FFD8D8D8"
+                >
+                
+                <!--#region Columns-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--#endregion-->
+
+                <!--#region Attachment button-->
+                <Button Grid.Column="0">
+
+                    <Image 
+                        Source="/icons/attach.png"
+                        Height="30"
+                        Width="30"
+                        >
+                    </Image>
+
+                </Button>
+                <!--#endregion-->
+
+                <!--#region Textbox for Write message-->
+                <TextBox 
+                    Grid.Column="1"
+                    FontSize="14"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    VerticalContentAlignment="Center"
+                       >
+                    Write a message...
+                </TextBox>
+                <!--#endregion-->
+                
+                <!--#region Smile button-->
+                <Button Grid.Column="2">
+
+                    <Image 
+                        Source="/icons/smile.png" 
+                        Height="30"
+                        Width="30"
+                        >
+                    </Image>
+
+                </Button>
+                <!--#endregion-->
+            
+                <!--#region Microphone button-->
+                <Button Grid.Column="3">
+                    
+                    <Image 
+                        Source="/icons/microphone-black-shape.png"
+                        Height="30"
+                        Width="30"
+                        >
+                    </Image>
+
+                </Button>
+                <!--#endregion-->
+
+            </Grid>
+            <!--#endregion-->
+            
+            <!--#region Messages-->
+            <StackPanel>
+                
+            </StackPanel>
+            <!--#endregion-->
+
+                
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+            
+            
+            
+            
+            
+        </DockPanel>
+        <!--#endregion-->
+        
+    </Grid>
+</Window>
